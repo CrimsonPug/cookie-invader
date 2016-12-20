@@ -3,12 +3,13 @@ function Drop(x, y){
     this.y = y;
 
     this.show = function(){
-        fill(50, 0, 200);
-        ellipse(this.x, this.y,8,8);
+        noStroke();
+        fill(150, 0, 255);
+        ellipse(this.x, this.y,12,12);
     }
 
     this.move = function(){
-        this.y = this.y - 1;
+        this.y = this.y - 3;
     }
 
 }
