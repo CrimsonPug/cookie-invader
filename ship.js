@@ -1,7 +1,10 @@
 function Ship(){
     this.x = width/2;
+    this.xdir = 0;
 
-
+    this.setDir = function(dir){
+        this.xdir = dir;
+    }
     this.show = function(){
         fill(255);
         rectMode(CENTER)
@@ -9,7 +12,7 @@ function Ship(){
     }
 
     this.move = function(dir){
-        this.x += dir; 
+        this.x += this.xdir*5; 
     }
 
 }
