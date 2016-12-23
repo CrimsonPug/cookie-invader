@@ -1,13 +1,27 @@
 var ship;
+var missiles = [];
 var flowers = [];
 var drops = [];
 
 function setup() {
     createCanvas(600,400);
     ship = new Ship();
+
     for (var i = 0; i<7; i++){
-        flowers [i] = new Flower(i*80+80, 60);
+        flowers[i] = new Flower(i*80+80, 60);
+        // setInterval(()=>{
+            missiles[i] = new Missiles(flowers[i].x, flowers[i].y)
+        
+        // },1000)    
     }
+
+    // setInterval(()=>{
+    //     for (var i=0; i<7; i++){
+    //         missiles[i] = new Missiles(i*80+80, 60);
+    //     }
+    // console.log('cookie')
+    // },3000);
+    
     //drop = new Drop(width/2,height/2);
 }
 
@@ -16,6 +30,13 @@ function draw() {
     ship.show();
     ship.move();
     var edge = false;
+
+
+    for (var i=0; i < missiles.length;i++){
+        missiles[i].show();
+        missiles[i].move();
+    }
+
     for (var i = 0; i < flowers.length; i++) {
         flowers[i].show();
         flowers[i].move();
